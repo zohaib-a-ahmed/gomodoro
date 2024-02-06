@@ -19,6 +19,16 @@ func main() {
     controlChan := make(chan string)
     go handleUserInput(controlChan)
 
+    var title string
+    title = `
+        ____   _____    _   _   _____    ____     _____    _____    _____
+       |    | |     |  | | | | |     |  |    |   |     |  |     |  |     |
+       |____| |     |  | |_| | |     |  |     |  |     |  |_____|  |     |
+       |      |_____|  |     | |_____|  |____|   |_____|  |   \    |_____|
+    `
+
+    fmt.Printf(title)
+    fmt.Println("")
     fmt.Printf("Commands: 'start' to begin, 'pause' to pause, 'resume' to resume, 'quit' to quit\n")
     for command := range controlChan {
         switch command {
